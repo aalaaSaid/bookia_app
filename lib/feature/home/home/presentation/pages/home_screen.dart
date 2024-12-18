@@ -1,4 +1,6 @@
+import 'package:booki_app/core/functions/navigation.dart';
 import 'package:booki_app/core/utils/text_style.dart';
+import 'package:booki_app/feature/home/home/presentation/pages/search_screen.dart';
 import 'package:booki_app/feature/home/home/presentation/widgets/book_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -35,7 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: () {},
                     icon: SvgPicture.asset('assets/icons/notification.svg')),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigateTO(context, const SearchScreen());
+                    },
                     icon: SvgPicture.asset('assets/icons/search.svg'))
               ],
             ),

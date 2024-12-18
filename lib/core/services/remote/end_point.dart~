@@ -10,7 +10,7 @@ class AppEndPoint {
   //home
   static const String slider = '/sliders';
   static const String getBooks = '/products-new-arrivals';
-  static const String search = '/products-search';
+  static const String search = '';
   //wishlist
   static const String showWishlist = '/wishlist';
   static const String addToWishlist ='/add-to-wishlist';

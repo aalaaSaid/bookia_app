@@ -69,14 +69,14 @@ class _WishlistScreenState extends State<WishlistScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Icon(
-                          Icons.bookmark_border_outlined,
-                          size: 100,
+                          Icons.bookmark,
+                          size: 50,
                           color: AppColors.primaryColor,
                         ),
                         const Gap(20),
                         Text(
                           'No Books found',
-                          style: getHeadlineTextStyle(
+                          style: getTitleTextStyle(
                             color: AppColors.primaryColor,
                           ),
                         )

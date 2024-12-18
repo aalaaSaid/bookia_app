@@ -9,6 +9,7 @@ class HomeBloc extends Bloc<HomeEvent,HomeState>{
   HomeBloc():super(HomeInitialState()) {
     on<HomeGetNewArrivalsEvent>(getNewArrivalBooks);
     on<HomeSliderEvent>(getSliderData);
+    on<SearchEvent>(searchForBooks);
   }
   BooksModel? booksModel ;
  Future<void> getNewArrivalBooks (HomeGetNewArrivalsEvent event,Emitter<HomeState>emit)async{
@@ -37,5 +38,15 @@ class HomeBloc extends Bloc<HomeEvent,HomeState>{
 
 
   }
-
+  Future<void>searchForBooks(SearchEvent event , Emitter<HomeState>emit)async{
+    emit(SearchLoadingState());
+    await HomeRepo.searchBook().then((value){
+      if(value!=null){
+        booksModel = value;
+        emit(SearchSuccessState());
+      }else {
+        emit(SliderErrorState());
+      }
+    });
+  }
 }

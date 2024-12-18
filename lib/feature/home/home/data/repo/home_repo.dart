@@ -6,6 +6,7 @@ import 'package:dio/dio.dart';
 import '../models/slider_model.dart';
 
 class HomeRepo {
+  //get books
 static Future <BooksModel?>getArrivalBooks()async{
   try{
     var response = await Dio().get(AppEndPoint.baseUrl+AppEndPoint.getBooks);
@@ -21,6 +22,7 @@ static Future <BooksModel?>getArrivalBooks()async{
     return null ;
   }
 }
+//slider books
 static Future<SliderModel?> getSlider()async {
   try {
     var response = await Dio().get(AppEndPoint.baseUrl + AppEndPoint.slider);
@@ -37,4 +39,18 @@ static Future<SliderModel?> getSlider()async {
   }
 
   }
+  //search for books
+static Future<BooksModel?>searchBook()async{
+  try{
+    var response = await Dio().get(AppEndPoint.baseUrl+AppEndPoint.search);
+    if(response.statusCode==200){
+      return BooksModel.fromJson(response.data);
+    }else {
+      return null ;
+    }
+  }on Exception catch(e){
+    log(e.toString());
+    return null ;
+  }
+}
 }
