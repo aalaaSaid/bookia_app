@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomListtile extends StatelessWidget {
   final String? text;
   final Function()onPressed;
-   CustomListtile({super.key, required this.text, required this.onPressed});
+   const CustomListtile({super.key, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class CustomListtile extends StatelessWidget {
       elevation: 3,
       child: ListTile(
         leading: Text(text!,style: getSubTitleTextStyle(),),
-        trailing: IconButton(onPressed: onPressed, icon:Icon(Icons.arrow_forward_ios_outlined)),
+        trailing: IconButton(onPressed: onPressed, icon:const Icon(Icons.arrow_forward_ios_outlined)),
       ),
     );
   }

@@ -11,6 +11,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<UpdateProfileEvent>(updateProfile);
     on<UpdatePasswordEvent>(updatePassword);
     on<LogoutEvent>(logout);
+    on<ContactEvent>(contact);
   }
   ProfileModel? profileModel;
   Future<void> showProfile(
@@ -68,5 +69,19 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
      }
    });
   }
+Future<void>contact (ContactEvent event , Emitter<ProfileState>emit)async{
+    emit(ContactLoadingState());
+    await ProfileRepo.contact(
+    name: event.name!,
+        email: event.email!,
+        subject: event.subject!,
+        message: event.massage!).then((value){
+          if(value == true){
+            emit(ContactSuccessState());
+          }else {
+            emit(ContactErrorState());
+          }
+    });
+}
 }
 

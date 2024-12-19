@@ -24,5 +24,13 @@ class UpdatePasswordEvent extends ProfileEvent{
 }
 //logout
 class LogoutEvent extends ProfileEvent{
+}
+// contact
+class ContactEvent extends ProfileEvent{
+ final String? name;
+ final String? email ;
+ final String? massage ;
+ final String? subject ;
 
+  ContactEvent({required this.name,required this.email, required this.massage, required this.subject});
 }

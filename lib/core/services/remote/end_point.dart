@@ -25,6 +25,7 @@ static const String showProfile = '/profile';
 static const String updateProfile ='/update-profile';
 static const String resetPassword = '/update-password';
 static const String logout = '/logout';
+static const String contact = '/contact-us';
 //checkout
 static const String getCheckout = '/checkout';
 }

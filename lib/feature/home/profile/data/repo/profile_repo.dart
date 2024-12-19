@@ -112,4 +112,26 @@ class ProfileRepo {
       return false;
     }
   }
+  //contact us
+static Future<bool?>contact ({required String name  ,required String email,required String subject,required String message})async{
+    try{
+      var response = await Dio().post(
+          AppEndPoint.baseUrl+AppEndPoint.contact,
+      data: {
+        "name":name,
+        "email":email,
+        "subject":subject,
+        "message":message
+      }
+      );
+      if(response.statusCode ==200){
+        return true ;
+      }else {
+        return false ;
+      }
+    }on Exception catch(e){
+      log(e.toString());
+      return false;
+    }
+}
 }

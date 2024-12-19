@@ -5,6 +5,7 @@ import 'package:booki_app/core/utils/text_style.dart';
 import 'package:booki_app/feature/home/profile/presentation/bloc/profile_bloc.dart';
 import 'package:booki_app/feature/home/profile/presentation/bloc/profile_event.dart';
 import 'package:booki_app/feature/home/profile/presentation/bloc/profile_state.dart';
+import 'package:booki_app/feature/home/profile/presentation/pages/contact_screen.dart';
 import 'package:booki_app/feature/home/profile/presentation/pages/update_password.dart';
 import 'package:booki_app/feature/home/profile/presentation/pages/update_profile.dart';
 import 'package:booki_app/feature/home/profile/presentation/widgets/custom_listtile.dart';
@@ -105,7 +106,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     const Spacer(),
                     CustomListtile(text: 'My Orders', onPressed: () {}),
                     const Gap(10),
-                    CustomListtile(text: 'Edit Profile', onPressed: () {
+                    CustomListtile(text: 'Edit Profile',
+                        onPressed: () {
                       navigateTO(context, UpdateProfile(
                         profileModel: profileModel!,
                       ));
@@ -117,7 +119,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     const Gap(10),
                     CustomListtile(text: 'FAQ', onPressed: () {}),
                     const Gap(10),
-                    CustomListtile(text: 'Contact Us', onPressed: () {}),
+                    CustomListtile(text: 'Contact Us', onPressed: () {
+                      navigateTO(context, ContactScreen(
+                        profileModel: profileModel!,
+                      ));
+                    }),
                     const Gap(10),
                     CustomListtile(text: 'Privacy & Terms', onPressed: () {}),
                     const Spacer(),

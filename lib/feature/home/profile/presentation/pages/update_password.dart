@@ -6,12 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../../core/functions/navigation.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/text_style.dart';
 import '../../../../../core/widgets/custom_back_button.dart';
 import '../../../../../core/widgets/custom_button.dart';
-import '../../../../auth/presentation/pages/password_pages/success_password_change.dart';
 
 class UpdatePassword extends StatelessWidget {
   UpdatePassword({super.key});
@@ -37,7 +35,8 @@ class UpdatePassword extends StatelessWidget {
             showErrorDialog(context, 'Something went wrong');
           }else if(state is UpdatePasswordSuccessState){
             Navigator.pop(context);
-            navigateReplacement(context, const SuccessPasswordChange());
+            //navigateReplacement(context, const SuccessPasswordChange());
+             showErrorDialog(context, 'Your Password Update Successful');
           }
         },
         child: SingleChildScrollView(

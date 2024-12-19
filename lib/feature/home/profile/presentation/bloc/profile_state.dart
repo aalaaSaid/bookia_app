@@ -16,3 +16,7 @@ class UpdatePasswordLoadingState extends ProfileState{}
 class LogoutSuccessState extends ProfileState{}
 class LogoutErrorState extends ProfileState{}
 class LogoutLoadingState extends ProfileState{}
+//contact us
+class ContactLoadingState extends ProfileState{}
+class ContactErrorState extends ProfileState{}
+class ContactSuccessState extends ProfileState{}
