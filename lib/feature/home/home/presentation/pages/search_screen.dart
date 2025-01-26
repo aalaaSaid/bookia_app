@@ -40,7 +40,7 @@ class _SearchScreenState extends State<SearchScreen> {
     }
   },
   child: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
         child: SingleChildScrollView(
           child:Column(
             mainAxisAlignment: MainAxisAlignment.center,
